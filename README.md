@@ -30,8 +30,14 @@ the project is located in /opt/proj.
 
 ### Nginx
 you can ssh into the container using:
-`docker exec -it `docker ps | grep "nginx" | awk '{print $1}'` sh`
+
+```
+docker exec -it `docker ps | grep "nginx" | awk '{print $1}'` sh
+```
 
 ### PHP
 you can ssh into the container using:
-`docker exec -it `docker ps | grep "php-fpm" | awk '{print $1}'` /bin/bash`
+
+```
+docker exec -it `docker ps | grep "php-fpm" | awk '{print $1}'` /bin/bash
+```
