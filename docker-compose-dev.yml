@@ -1,0 +1,26 @@
+version: "2"
+services:
+  php:
+      volumes_from:
+        - container:vendors:rw
+        - container:src:rw
+        - container:bin:rw
+        - container:web:rw
+        - container:app:rw
+        - container:var:rw
+  nginx:
+      volumes_from:
+          - container:web:rw
+volumes:
+  vendors:
+    external: true
+  src:
+    external: true
+  bin:
+    external: true
+  web:
+    external: true
+  app:
+    external: true
+  var:
+    external: true

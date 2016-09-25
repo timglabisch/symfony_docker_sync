@@ -1,0 +1,12 @@
+version: "2"
+services:
+  php:
+      image: php:7.0-fpm
+      expose:
+          - "9000"
+  nginx:
+      build: ./docker/nginx
+      ports:
+          - "80:80"
+      links:
+          - php

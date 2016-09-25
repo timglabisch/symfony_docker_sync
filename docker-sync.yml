@@ -1,0 +1,53 @@
+options:
+  #compose-file-path: './docker-compose/docker-compose.yml'
+  compose-dev-file-path: './docker-compose-dev.yml'
+  verbose: true
+syncs:
+  vendors:
+    src: './vendor'
+    dest: '/opt/proj/vendor'
+    sync_args: '--delete'
+    sync_strategy: 'rsync'
+    sync_host_port: 10872
+    sync_excludes: ["bin/"]
+  src:
+    src: './src'
+    dest: '/opt/proj/src'
+    sync_strategy: 'unison'
+    sync_host_port: 10873
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_args: '-prefer newer -copyonconflict'
+  bin:
+    src: './bin'
+    dest: '/opt/proj/bin'
+    sync_strategy: 'unison'
+    sync_host_port: 10874
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_args: '-prefer newer -copyonconflict'
+  web:
+    src: './web'
+    dest: '/opt/proj/web'
+    sync_strategy: 'unison'
+    sync_host_port: 10875
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_args: '-prefer newer -copyonconflict'
+  app:
+    src: './app'
+    dest: '/opt/proj/app'
+    sync_strategy: 'unison'
+    sync_host_port: 10876
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_args: '-prefer newer -copyonconflict'
+  var:
+    src: './var'
+    dest: '/opt/proj/var'
+    sync_strategy: 'unison'
+    sync_host_port: 10877
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_args: '-prefer newer -copyonconflict'
+    sync_excludes: ["cache", "logs", "sessions"]
