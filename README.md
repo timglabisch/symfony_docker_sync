@@ -12,8 +12,9 @@ normal times i use vagrant. docker sync should be as fast (or may faster) than u
 
 1. install (http://docker-sync.io/)[docker-sync]
 2. clone this repo.
-3. run `docker-sync-stack start`
-4. wait a bit and open `http://127.0.0.1/app_dev.php`
+3. run `composer install`
+4. run `docker-sync-stack start`
+5. wait a bit and open `http://127.0.0.1/app_dev.php`
 
 ## Suspending
 
